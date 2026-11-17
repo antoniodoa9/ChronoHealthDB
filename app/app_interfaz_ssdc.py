@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 from tkinter import ttk, messagebox
 import pymongo
@@ -11,7 +12,7 @@ class AppHospitalCDSS:
         
         # Conexión a MongoDB
         try:
-            self.client = pymongo.MongoClient('MONGODB_URI_REDACTED')
+            self.client = pymongo.MongoClient(os.environ['MONGODB_URI'])
             self.db = self.client['PROYECTO']
             self.coleccion = self.db['pacientes_externos']
         except Exception as e:

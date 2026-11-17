@@ -1,9 +1,10 @@
+import os
 from pymongo import MongoClient
 
 # Requires the PyMongo package.
 # https://api.mongodb.com/python/current
 
-client = MongoClient('MONGODB_URI_REDACTED')
+client = MongoClient(os.environ['MONGODB_URI'])
 result = client['PROYECTO']['pacientes_externos'].aggregate([
     {
         '$lookup': {
@@ -36,12 +37,13 @@ result = client['PROYECTO']['pacientes_externos'].aggregate([
 
 
 
+import os
 from pymongo import MongoClient
 
 # Requires the PyMongo package.
 # https://api.mongodb.com/python/current
 
-client = MongoClient('MONGODB_URI_REDACTED')
+client = MongoClient(os.environ['MONGODB_URI'])
 result = client['PROYECTO']['pacientes_externos'].aggregate([
     {
         '$match': {
@@ -87,12 +89,13 @@ result = client['PROYECTO']['pacientes_externos'].aggregate([
 
 
 
+import os
 from pymongo import MongoClient
 
 # Requires the PyMongo package.
 # https://api.mongodb.com/python/current
 
-client = MongoClient('MONGODB_URI_REDACTED')
+client = MongoClient(os.environ['MONGODB_URI'])
 result = client['PROYECTO']['pacientes_externos'].aggregate([
     {
         '$lookup': {
@@ -142,12 +145,13 @@ result = client['PROYECTO']['pacientes_externos'].aggregate([
 ])
 
 
+import os
 from pymongo import MongoClient
 
 # Requires the PyMongo package.
 # https://api.mongodb.com/python/current
 
-client = MongoClient('MONGODB_URI_REDACTED')
+client = MongoClient(os.environ['MONGODB_URI'])
 result = client['PROYECTO']['pacientes_externos'].aggregate([
     {
         '$lookup': {

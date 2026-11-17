@@ -1,3 +1,4 @@
+import os
 import pymongo
 from datetime import datetime
 
@@ -9,7 +10,7 @@ def generar_informe_alertas_geriatricas():
 
     try:
         # 1. Conexión a MongoDB 
-        client = pymongo.MongoClient('MONGODB_URI_REDACTED')
+        client = pymongo.MongoClient(os.environ['MONGODB_URI'])
         db = client['PROYECTO']
         coleccion_pacientes = db['pacientes_externos']
 
